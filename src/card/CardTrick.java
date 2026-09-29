@@ -56,25 +56,39 @@ public class CardTrick {
         // check.setSuit(suit);
         
         // and search magicHand here
-        for (int i=0; i<magicHand.length; i++)
-        {
-            if (check.getSuit().equals(magicHand[i].getSuit()) && check.getValue() == magicHand[i].getValue())
-            {
-                cardMatch = true;
-            }
-        }
-        
-        //Then report the result here
-        if (cardMatch) {
-            System.out.println("Your card ("+ suit + " " + value + ") is in the hand.");
-        } else {
-            System.out.println("Your card ("+ suit + " " + value + " is not in the hand.");
-        }
+//        for (int i=0; i<magicHand.length; i++)
+//        {
+//            if (check.getSuit().equals(magicHand[i].getSuit()) && check.getValue() == magicHand[i].getValue())
+//            {
+//                cardMatch = true;
+//            }
+//        }
+//        
+//        //Then report the result here
+//        if (cardMatch) {
+//            System.out.println("Your card ("+ suit + " " + value + ") is in the hand.");
+//        } else {
+//            System.out.println("Your card ("+ suit + " " + value + " is not in the hand.");
+//        }
         
         // add one luckcard hard code 2,clubs
         Card luckyCard = new Card();
         luckyCard.setValue(7);
         luckyCard.setSuit("Hearts");
+        
+        for (int i=0; i<magicHand.length; i++)
+        {
+            if (luckyCard.getSuit().equals(magicHand[i].getSuit()) && luckyCard.getValue() == magicHand[i].getValue())
+            {
+                cardMatch = true;
+            }
+        }
+        
+        if (cardMatch) {
+            System.out.println("Your lucky card ("+ luckyCard.getSuit() + " " + luckyCard.getValue() + ") is in the hand.");
+        } else {
+            System.out.println("Your lucky card ("+ luckyCard.getSuit() + " " + luckyCard.getValue() + " is not in the hand.");
+        }
         
         s.close();
         n.close();
