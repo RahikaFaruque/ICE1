@@ -45,15 +45,15 @@ public class CardTrick {
         }
         
         //insert code to ask the user for Card value and suit, create their card
-        Card check = new Card();
+        // Card check = new Card();
         
-        System.out.print("Ender a card value (1-13): ");
-        value = s.nextInt();
-        check.setValue(value);
+        // System.out.print("Ender a card value (1-13): ");
+        // value = s.nextInt();
+        // check.setValue(value);
 
-        System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=Clubs, 3=Spades): ");
-        suit = n.next();
-        check.setSuit(suit);
+        // System.out.print("Enter a suit (0-3 where 0=Hearts, 1=Diamonds, 2=Clubs, 3=Spades): ");
+        // suit = n.next();
+        // check.setSuit(suit);
         
         // and search magicHand here
         for (int i=0; i<magicHand.length; i++)
@@ -72,7 +72,9 @@ public class CardTrick {
         }
         
         // add one luckcard hard code 2,clubs
-        
+        Card luckyCard = new Card();
+        luckyCard.setValue(7);
+        luckyCard.setSuit("Hearts");
         
         s.close();
         n.close();
